@@ -14,7 +14,7 @@ class Player {
       wisdom: 0,
       charisma: 0
     };
-    
+
     let shuffledResult = shuffleArray(defaultAttributeScores);
     for (const [key, value] of Object.entries(this.attributes)) {
       let attributeValue = shuffledResult.pop();
@@ -54,4 +54,13 @@ function shuffleArray(targetArray) {
   }
   
   return shuffled;
+}
+
+function diceRoller(times, sides) {
+  let results = [];
+  for (let i = 0; i < times; i++) {
+    results.push(Math.floor(math.random() * sides + 1));
+  }
+
+  return results;
 }
