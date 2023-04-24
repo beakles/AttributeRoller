@@ -14,6 +14,12 @@ class Player {
       wisdom: 0,
       charisma: 0
     };
+    
+    let shuffledResult = shuffleArray(defaultAttributeScores);
+    for (const [key, value] of Object.entries(this.attributes)) {
+      let attributeValue = shuffledResult.pop();
+      this.attributes[key] = attributeValue;
+    }
   }
 
   rollAttributes() {
@@ -38,11 +44,14 @@ player02.printPlayer();
 // adapted to JS and reconfigured to return a new (non-mutated) array
 function shuffleArray(targetArray) {
   let shuffled = Array.from(targetArray);
+
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     const temp = shuffled[i];
+
     shuffled[i] = shuffled[j];
     shuffled[j] = temp;
   }
+  
   return shuffled;
 }
