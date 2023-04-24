@@ -57,6 +57,9 @@ function shuffleArray(targetArray) {
 }
 
 function sumArrayElements(array) {
+  return array.reduce((total, currentNumber) => total + currentNumber);
+  
+  /*
   let sum = 0;
 
   for (let i = 0; i < array.length; i++) {
@@ -64,6 +67,7 @@ function sumArrayElements(array) {
   }
 
   return sum;
+  */
 }
 
 function diceRoller(times, sides) {
