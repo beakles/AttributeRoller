@@ -27,15 +27,18 @@ class Player {
       let results = diceRoller(4, 6);
       results.sort(function(a, b){return a - b}); // numeric sort w/ compare function
       results.shift(); // remove lowest die roll
-      
+
       let sum = sumArrayElements(results); // sum the rolls
       this.attributes[key] = sum;
     }
   };
 
   printPlayer() {
-    console.log(this.name);
-    console.log(this.attributes);
+    console.log(`NAME: ${this.name}`);
+
+    for (const [key, value] of Object.entries(this.attributes)) {
+      console.log(`${key.slice(0, 3).toUpperCase()}: ${value}`);
+    }
   }
 }
 
@@ -81,7 +84,7 @@ function diceRoller(times, sides) {
   let results = [];
 
   for (let i = 0; i < times; i++) {
-    results.push(Math.floor(math.random() * sides + 1));
+    results.push(Math.floor(Math.random() * sides + 1));
   }
 
   return results;
