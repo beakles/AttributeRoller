@@ -31,3 +31,18 @@ player01.printPlayer();
 const player02 = new Player('Son Goku');
 player02.rollAttributes();
 player02.printPlayer();
+
+
+// Fisher-Yates algorithm for randomly sorting an array
+// from: https//dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
+// adapted to JS and reconfigured to return a new (non-mutated) array
+function shuffleArray(targetArray) {
+  let shuffled = Array.from(targetArray);
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = temp;
+  }
+  return shuffled;
+}
