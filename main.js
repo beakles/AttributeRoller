@@ -1,5 +1,7 @@
 // Code adapted from https://pre83.com/CMPM120/Project%2000%20%20The%20Toolset.html
 
+const defaultAttributeScores = [15, 14, 13, 12, 10, 8];
+
 class Player {
   constructor(characterName = 'Naruto') {
     this.name = characterName;
@@ -20,7 +22,7 @@ class Player {
 
   printPlayer() {
     console.log(this.name);
-    console.log(this.attribute);
+    console.log(this.attributes);
   }
 }
 
