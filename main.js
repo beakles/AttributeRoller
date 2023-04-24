@@ -23,3 +23,9 @@ class Player {
     console.log(this.attribute);
   }
 }
+
+const player01 = new Player();
+player01.printPlayer();
+const player02 = new Player('Son Goku');
+player02.rollAttributes();
+player02.printPlayer();
